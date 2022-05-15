@@ -43,10 +43,10 @@ export default async (request, context) => {
     const homeLeading = game.hscore > game.ascore;
 
     return margin === 0
-      ? `${game.hteam} (${game.hgoals}.${game.hbehinds}.${game.hscore}) and ${game.ateam} (${game.agoals}.${game.abehinds}.${game.ascore}) are even at ${game.venue}. ${game.timestr}.`
+      ? `${game.hteam} (${game.hgoals} ${game.hbehinds} ${game.hscore}) and ${game.ateam} (${game.agoals} ${game.abehinds} ${game.ascore}) are even at ${game.venue}. ${game.timestr}.`
       : homeLeading
-      ? `${game.hteam} (${game.hgoals}.${game.hbehinds}.${game.hscore}) leads ${game.ateam} (${game.agoals}.${game.abehinds}.${game.ascore}) by ${margin} points at ${game.venue}. ${game.timestr}.`
-      : `${game.ateam} (${game.agoals}.${game.abehinds}.${game.ascore}) leads ${game.hteam} (${game.hgoals}.${game.hbehinds}.${game.hscore}) by ${margin} points at ${game.venue}. ${game.timestr}.`;
+      ? `${game.hteam} (${game.hgoals} ${game.hbehinds} ${game.hscore}) leads ${game.ateam} (${game.agoals} ${game.abehinds} ${game.ascore}) by ${margin} points at ${game.venue}. ${game.timestr}.`
+      : `${game.ateam} (${game.agoals} ${game.abehinds} ${game.ascore}) leads ${game.hteam} (${game.hgoals} ${game.hbehinds} ${game.hscore}) by ${margin} points at ${game.venue}. ${game.timestr}.`;
   });
 
   return new Response(liveGameSummaries.join("\n\n"));
