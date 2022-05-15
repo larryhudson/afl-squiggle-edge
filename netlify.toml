@@ -1,3 +1,7 @@
 [[edge_functions]]
 path = '/api.json'
-function = 'squiggle-api'
+function = 'live-games'
+
+[[edge_functions]]
+path = '/next-swans-game.json'
+function = 'next-swans-game'
