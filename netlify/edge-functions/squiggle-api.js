@@ -1,4 +1,14 @@
 export default async (request, context) => {
+  // check for authorization header
+  if (
+    request.headers.get("Authorization") !==
+    Deno.env.get("SUPER_SECRET_PASSWORD")
+  ) {
+    return new Response("Not authorized", {
+      status: 403,
+    });
+  }
+
   // current year
   const now = new Date();
   const year = now.getFullYear();
